@@ -22,6 +22,10 @@ public class GameRenderer extends JPanel {
         elem.drawLine(PongLogic.WIDTH / 2, 0, PongLogic.WIDTH / 2, PongLogic.HEIGHT-1);
         elem.drawArc(PongLogic.WIDTH / 2 - 60, PongLogic.HEIGHT / 2 - 60, 120, 120, 0, 360);
 
+        for (int i=0 ; i<PongLogic.PONG_WIDTH ; i++){
+            elem.fillRect(PongLogic.pongLeft.get(i).x, PongLogic.pongLeft.get(i).y, PongLogic.SCALE, PongLogic.SCALE);
+            elem.fillRect(PongLogic.pongRight.get(i).x, PongLogic.pongRight.get(i).y, PongLogic.SCALE, PongLogic.SCALE);
+        }
 
         elem.setColor(new Color(26367));
         elem.drawString("Goals: " + PongLogic.score_left, PongLogic.WIDTH / 4, 30);
